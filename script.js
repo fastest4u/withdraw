@@ -27,7 +27,7 @@ function populateTable(data) {
     </td>
     <td>
       <select class="form-select" name="Email">
-        <option value="Pathwaylogistics2022@gmail.com">Pathwaylogistics2022@gmail.com</option>
+        <option value="Pathwaylogistics2022@gmail.com">bangzerogg@gmail.com</option>
       </select>
     </td>
   `;
