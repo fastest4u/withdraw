@@ -117,7 +117,7 @@ async function logData() {
 // Function to post data to the server
 async function postDataToServer(data) {
   const urls = [
-    "https://sheet.best/api/sheets/8cca094e-0682-44bb-9eda-a40c5ad1301a/tabs/DB"
+    "https://sheet.best/api/sheets/cab34f47-ddcf-4fcd-8aad-59a3bd946108/tabs/DB"
   ];
 
   const myHeaders = new Headers();
