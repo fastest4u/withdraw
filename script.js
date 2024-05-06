@@ -117,7 +117,7 @@ async function logData() {
 // Function to post data to the server
 async function postDataToServer(data) {
   const urls = [
-    "https://sheet.best/api/sheets/483fa1a9-9680-40e3-a8b8-d10ac4c57f32/tabs/DB"
+    "https://sheet.best/api/sheets/bd3018b2-3c69-4f31-99be-40811310f6f5/tabs/DB"
   ];
 
   const myHeaders = new Headers();
@@ -187,7 +187,7 @@ async function checkbarcode(barcode) {
   };
 
   try {
-    const url = `https://sheet.best/api/sheets/483fa1a9-9680-40e3-a8b8-d10ac4c57f32/tabs/DB/barcode/${barcode}`;
+    const url = `https://sheet.best/api/sheets/bd3018b2-3c69-4f31-99be-40811310f6f5/tabs/DB/barcode/${barcode}`;
     const response = await fetch(url, requestOptions);
 
     // เพิ่มการตรวจสอบสถานะการเรียก API
