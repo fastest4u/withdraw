@@ -1,18 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
-    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>My First LIFF</title>
+    <title>LIFF Starter</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>           
-    <button id="closewindowbutton">LIFF アプリを閉じる</button>
-    <button id="openwindowbutton">ウィンドウを LINE 内で開く</button>
-    <button id="openwindowexternalbutton">ウィンドウを外部ブラウザで開く</button>
-    <button id="sendmessagebutton">メッセージ送信</button>
+
+<body>
+    <div class="buttongroup">
+        <div class="buttonrow">
+            <button id="openwindowbutton">Open Window</button>
+            <button id="closewindowbutton">Close Window</button>
+        </div>
+        <div class="buttonrow">
+            <button id="getaccesstoken">Get Access Token</button>
+            <button id="getprofilebutton">Get Profile</button>
+            <button id="sendmessagebutton">Send Message</button>
+        </div>
+    </div>
+
+    <div id="accesstokendata">
+        <h2>Access Token</h2>
+        <a href="#" onclick="toggleAccessToken()">Close Access Token</a>
+        <table border="1">
+            <tr>
+                <th>accessToken</th>
+                <td id="accesstokenfield"></td>
+            </tr>
+        </table>
+    </div>
+
     <div id="profileinfo">
         <h2>Profile</h2>
+        <a href="#" onclick="toggleProfileData()">Close Profile</a>
         <div id="profilepicturediv">
         </div>
         <table border="1">
@@ -61,8 +79,6 @@
         </table>
     </div>
     
-    <!-- LIFF SDK の読み込み -->
     <script src="https://d.line-scdn.net/liff/1.0/sdk.js"></script>
-    <script src="liff.js"></script>
+    <script src="liff-starter.js"></script>
 </body>
-</html>
