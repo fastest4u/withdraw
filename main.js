@@ -4,12 +4,21 @@ async function main() {
     if (liff.isLoggedIn()) {
         const profile = await liff.getProfile();
         console.log(profile);
-        document.getElementById("pictureUrl").src = profile.pictureUrl;
-        document.getElementById("displayName").append(profile.displayName);
-        document.getElementById("statusMessage").append(profile.statusMessage); // Corrected typo here
+
+        const pictureUrlElem = document.getElementById("pictureUrl");
+        const displayNameElem = document.getElementById("displayName");
+        const statusMessageElem = document.getElementById("statusMessage");
+
+        if (pictureUrlElem && displayNameElem && statusMessageElem) {
+            pictureUrlElem.src = profile.pictureUrl;
+            displayNameElem.append(profile.displayName);
+            statusMessageElem.append(profile.statusMessage);
+        } else {
+            console.error("One or more elements not found in the DOM.");
+        }
     } else {
         liff.login();
     }
 }
 
-main();
+document.addEventListener("DOMContentLoaded", main);
