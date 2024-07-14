@@ -10,7 +10,7 @@
             }).then(() => {
                 if (liff.isLoggedIn()) {
                     // ผู้ใช้ login แล้ว
-                    getUserProfile();
+                    liff.logout()
                 } else {
                     // ผู้ใช้ยังไม่ได้ login
                     liff.login(); 
