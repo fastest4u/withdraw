@@ -1,24 +1,22 @@
 async function main() {
-    await liff.init({ liffId: "2005784883-MqXYJ2vW" });
+    await liff.init({ liffId: "2005784883-MqXYJ2vW",withloginOnexternalBrowser: true });
 
     if (liff.isLoggedIn()) {
-        const profile = await liff.getProfile();
-        console.log(profile);
-
-        const pictureUrlElem = document.getElementById("pictureUrl");
-        const displayNameElem = document.getElementById("displayName");
-        const statusMessageElem = document.getElementById("statusMessage");
-
-        if (pictureUrlElem && displayNameElem && statusMessageElem) {
-            pictureUrlElem.src = profile.pictureUrl;
-            displayNameElem.append(profile.displayName);
-            statusMessageElem.append(profile.statusMessage);
-        } else {
-            console.error("One or more elements not found in the DOM.");
-        }
+        getprofile();
+        
+        
     } else {
         liff.login();
     }
 }
 
-document.addEventListener("DOMContentLoaded", main);
+main();
+async function getprofile() {
+    const profile = await liff.getProfile();
+    console.log(profile);
+    document.getElementById("picture").src = profile.pictureUrl;
+    document.getElementById("UserId").append(profile.userId);
+    document.getElementById("displayName").append(profile.displayName);
+    document.getElementById("stausMessage").append(profile.statusMessage);
+    document.getElementById("email").append(profile.email);
+}
