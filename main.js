@@ -25,7 +25,7 @@ async function getprofile() {
         const displayNameElem = document.getElementById("displayName");
         const statusMessageElem = document.getElementById("statusMessage"); // แก้ไข id เป็น statusMessag
 
-        if (pictureElem && userIdElem && displayNameElem && statusMessageElem && emailElem) {
+        if ( userIdElem && displayNameElem && statusMessageElem ) {
          
             userIdElem.append(profile.userId);
             displayNameElem.append(profile.displayName);
