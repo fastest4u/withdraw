@@ -20,19 +20,16 @@ async function getprofile() {
     try {
         const profile = await liff.getProfile();
         console.log(profile);
-
-        const pictureElem = document.getElementById("picture");
         const userIdElem = document.getElementById("UserId");
+        alert("ไม่พบองค์ประกอบ HTML กรุณาตรวจสอบโค้ด HTML ของคุณ");
         const displayNameElem = document.getElementById("displayName");
-        const statusMessageElem = document.getElementById("statusMessage"); // แก้ไข id เป็น statusMessage
-        const emailElem = document.getElementById("email");
+        const statusMessageElem = document.getElementById("statusMessage"); // แก้ไข id เป็น statusMessag
 
         if (pictureElem && userIdElem && displayNameElem && statusMessageElem && emailElem) {
-            pictureElem.src = profile.pictureUrl;
+         
             userIdElem.append(profile.userId);
             displayNameElem.append(profile.displayName);
             statusMessageElem.append(profile.statusMessage);
-            emailElem.append(profile.email);
         } else {
             console.error("One or more elements not found in the DOM.");
             alert("ไม่พบองค์ประกอบ HTML กรุณาตรวจสอบโค้ด HTML ของคุณ");
