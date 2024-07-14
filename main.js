@@ -21,8 +21,9 @@ async function getprofile() {
         const profile = await liff.getProfile();
         console.log(profile);
         const userIdElem = document.getElementById("UserId");
-        alert("ไม่พบองค์ประกอบ HTML กรุณาตรวจสอบโค้ด HTML ของคุณ");
+        
         const displayNameElem = document.getElementById("displayName");
+        alert(displayNameElem);
         const statusMessageElem = document.getElementById("statusMessage"); // แก้ไข id เป็น statusMessag
 
         if ( userIdElem && displayNameElem && statusMessageElem ) {
