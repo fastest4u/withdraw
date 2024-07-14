@@ -1,90 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LIFF Starter</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<html>
+<head>
+    <title>LIFF Login</title>
+    <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script> 
+    <script>
+        function initializeLiff() {
+            liff.init({
+                liffId: '2005784883-MqXYJ2vW' // เปลี่ยนเป็น LIFF ID ของคุณ
+            }).then(() => {
+                if (liff.isLoggedIn()) {
+                    // ผู้ใช้ login แล้ว
+                    getUserProfile();
+                } else {
+                    // ผู้ใช้ยังไม่ได้ login
+                    liff.login(); 
+                }
+            }).catch((err) => {
+                console.error('LIFF initialization failed ', err);
+            });
+        }
+
+        function getUserProfile() {
+            liff.getProfile().then(profile => {
+                const name = profile.displayName;
+                // ทำอะไรก็ได้กับข้อมูล profile เช่น แสดงชื่อ
+                alert('Hello, ' + name);
+            }).catch((err) => {
+                console.error('Error getting profile: ', err);
+            });
+        }
+
+        window.onload = initializeLiff; 
+    </script>
 </head>
-
 <body>
-    <div class="container">
-        <div class="buttongroup my-4">
-            <div class="buttonrow">
-                <button id="openwindowbutton" class="btn btn-primary">Open Window</button>
-                <button id="closewindowbutton" class="btn btn-danger">Close Window</button>
-            </div>
-            <div class="buttonrow">
-                <button id="getaccesstoken" class="btn btn-success">Get Access Token</button>
-                <button id="getprofilebutton" class="btn btn-info">Get Profile</button>
-                <button id="sendmessagebutton" class="btn btn-warning">Send Message</button>
-            </div>
-        </div>
-
-        <div id="accesstokendata" class="mb-4">
-            <h2>Access Token</h2>
-            <a href="#" onclick="toggleAccessToken()">Close Access Token</a>
-            <table class="table table-bordered">
-                <tr>
-                    <th>accessToken</th>
-                    <td id="accesstokenfield"></td>
-                </tr>
-            </table>
-        </div>
-
-        <div id="profileinfo" class="mb-4">
-            <h2>Profile</h2>
-            <a href="#" onclick="toggleProfileData()">Close Profile</a>
-            <div id="profilepicturediv"></div>
-            <table class="table table-bordered">
-                <tr>
-                    <th>userId</th>
-                    <td id="useridprofilefield"></td>
-                </tr>
-                <tr>
-                    <th>displayName</th>
-                    <td id="displaynamefield"></td>
-                </tr>
-                <tr>
-                    <th>statusMessage</th>
-                    <td id="statusmessagefield"></td>
-                </tr>
-            </table>
-        </div>
-
-        <div id="liffdata" class="mb-4">
-            <h2>LIFF Data</h2>
-            <table class="table table-bordered">
-                <tr>
-                    <th>language</th>
-                    <td id="languagefield"></td>
-                </tr>
-                <tr>
-                    <th>context.viewType</th>
-                    <td id="viewtypefield"></td>
-                </tr>
-                <tr>
-                    <th>context.userId</th>
-                    <td id="useridfield"></td>
-                </tr>
-                <tr>
-                    <th>context.utouId</th>
-                    <td id="utouidfield"></td>
-                </tr>
-                <tr>
-                    <th>context.roomId</th>
-                    <td id="roomidfield"></td>
-                </tr>
-                <tr>
-                    <th>context.groupId</th>
-                    <td id="groupidfield"></td>
-                </tr>
-            </table>
-        </div>
-    </div>
-
-    <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
-    <script src="main.js"></script>
+    <p>LIFF Login Page</p>
 </body>
-
 </html>
