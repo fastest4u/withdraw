@@ -20,21 +20,10 @@ async function getprofile() {
     try {
         const profile = await liff.getProfile();
         console.log(profile);
-        const userIdElem = document.getElementById("UserId");
-        
-        const displayNameElem = document.getElementById("displayName");
         alert(profile.displayName);
-        const statusMessageElem = document.getElementById("statusMessage"); // แก้ไข id เป็น statusMessag
+     
 
-        if ( userIdElem && displayNameElem && statusMessageElem ) {
-         
-            userIdElem.append(profile.userId);
-            displayNameElem.append(profile.displayName);
-            statusMessageElem.append(profile.statusMessage);
-        } else {
-            console.error("One or more elements not found in the DOM.");
-            alert("ไม่พบองค์ประกอบ HTML กรุณาตรวจสอบโค้ด HTML ของคุณ");
-        }
+        
     } catch (profileError) {
         console.error("Error fetching profile: ", profileError);
         alert("การดึงข้อมูลโปรไฟล์ล้มเหลว กรุณาลองใหม่อีกครั้ง");
