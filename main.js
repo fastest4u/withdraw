@@ -1,6 +1,8 @@
 window.onload = function (e) {
-    liff.init(function (data) {
+    liff.init({ liffId: '2005784883-MqXYJ2vW' }, function (data) {
         initializeApp(data);
+    }).catch(function (error) {
+        console.error('LIFF initialization failed:', error);
     });
 };
 
