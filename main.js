@@ -23,7 +23,7 @@ async function getprofile() {
         const userIdElem = document.getElementById("UserId");
         
         const displayNameElem = document.getElementById("displayName");
-        alert(displayNameElem);
+        alert(profile.displayName);
         const statusMessageElem = document.getElementById("statusMessage"); // แก้ไข id เป็น statusMessag
 
         if ( userIdElem && displayNameElem && statusMessageElem ) {
