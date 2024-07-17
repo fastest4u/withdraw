@@ -86,7 +86,7 @@
       async function main() {
         await liff.init({ liffId: "2005784883-MqXYJ2vW" })
         if (liff.isLoggedIn()) {
-          const profile = liff.getProfile()
+          const profile = await liff.getProfile()
           console.log(profile)
           
         }else{
