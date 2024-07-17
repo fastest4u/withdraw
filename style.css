@@ -1,45 +1,32 @@
-
-html {
-    font-size: 11px;
+.b-example-divider {
+  height: 3rem;
+  background-color: rgba(0, 0, 0, .1);
+  border: solid rgba(0, 0, 0, .15);
+  border-width: 1px 0;
+  box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
 }
 
-table {
-    width: 100%;
-    table-layout:fixed;
-    word-break: break-all;
+.form-control-dark {
+  color: #fff;
+  background-color: var(--bs-dark);
+  border-color: var(--bs-gray);
+}
+.form-control-dark:focus {
+  color: #fff;
+  background-color: var(--bs-dark);
+  border-color: #fff;
+  box-shadow: 0 0 0 .25rem rgba(255, 255, 255, .25);
 }
 
-.div {
-    max-width: 100%;
-    text-align: center;
+.bi {
+  vertical-align: -.125em;
+  fill: currentColor;
 }
 
-#profilepicturediv {
-    text-align: center;
+.text-small {
+  font-size: 85%;
 }
 
-img { 
-    max-width: 25%; 
-    height: auto; 
-}
-
-#profileimagediv {
-    height: 100px;
-    width: 100px;
-}
-
-#contextinfo {
-    display: none;
-}
-
-#accesstokendata, #profileinfo {
-    display: none;
-}
-
-.buttongroup {
-    text-align: center;
-}
-
-button {
-    margin: 4px;
+.dropdown-toggle {
+  outline: 0;
 }
