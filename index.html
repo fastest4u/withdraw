@@ -79,10 +79,20 @@
         liff.logout()
         window.location.reload()
       }
+   
       function logIn() {
         liff.login({ redirectUri: window.location.href })
-        const profile = liff.getProfile()
-        console.log(profile)
+        .then(function() {
+          liff.getProfile().then(function(profile) {
+            console.log(profile)
+          }).catch(function(error) {
+            console.log(error)
+          })
+        })
+        .catch(function(error) {
+          console.log(error)
+        })
+       
       }
       async function main() {
         await liff.init({ liffId: "2005784883-MqXYJ2vW" })
