@@ -72,29 +72,26 @@ document.addEventListener("DOMContentLoaded", () => {
 
 async function getuser(uid) {
    
-    const app = initializeFirebase();
-    const db = getFirestoreDb(app);
-    const userCollection = collection(db, "user");
-    const q = query(userCollection, where("userId", "==",uid));
+    // const app = initializeFirebase();
+    // const db = getFirestoreDb(app);
+    // const userCollection = collection(db, "user");
+    // const q = query(userCollection, where("userId", "==",uid));
 
 
-    try {
-        // เพิ่มข้อมูลใหม่ไปยังคอลเล็กชัน
-        onSnapshot(q, (querySnapshot) => {
-            querySnapshot.forEach((doc) => {
-                if (doc.exists()) {
-                    return true
-                } else {
-                    return false
-                }
-            });
-        });
-    } catch (e) {
-        console.error("Error adding document: ", e);    
-    } 
-
-
-
+    // try {
+    //     // เพิ่มข้อมูลใหม่ไปยังคอลเล็กชัน
+    //     onSnapshot(q, (querySnapshot) => {
+    //         querySnapshot.forEach((doc) => {
+    //             if (doc.exists()) {
+    //                 return true
+    //             } else {
+    //                 return false
+    //             }
+    //         });
+    //     });
+    // } catch (e) {
+    //     console.error("Error adding document: ", e);    
+    // } 
 
 }
   
